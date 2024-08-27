@@ -1,6 +1,6 @@
 // src/components/SEO.tsx
 import Head from 'next/head'
-
+import { useEffect, useState } from 'react';
 interface SEOProps {
     title?: string
     description?: string
@@ -10,7 +10,8 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, ogImage, keywords }: SEOProps) {
-    const defaultTitle = "Empowering Nigeria's Creative Industries | CI Finesser";
+    const defaulName = "CI Finesser";
+    const defaultTitle = "Empowering Nigeria's Creative Industries - CI Finesser";
     const defaultDescription = "Revolutionizing Nigeria's creative and technological landscape through innovative solutions, talent development, and digital banking."
     const defaultOGImage = '/og-image.png' // Add a default OG image to your public folder
     const defaultKeywords = "Nigeria Creative Industries, Digital Economy Solutions, Talent Development Platform, Digital Banking Innovation, Creative Technology Solutions, African Talent Empowerment, Technological Innovation Nigeria, Creative Industry Revolution, Sustainable Growth Solutions"
@@ -18,6 +19,15 @@ export default function SEO({ title, description, ogImage, keywords }: SEOProps)
     description = description || defaultDescription
     ogImage = ogImage || defaultOGImage
     keywords = keywords ?? defaultKeywords
+
+    const [pathname, setPathname] = useState('/');
+
+    useEffect(() => {
+        // This will only run on the client-side
+        if (typeof window !== 'undefined') {
+            setPathname(window.location.pathname);
+        }
+    }, []);
 
     return (
         <Head>
@@ -27,7 +37,7 @@ export default function SEO({ title, description, ogImage, keywords }: SEOProps)
             <meta property="og:locale" content="en_US" />
             <meta property="og:site_name" content={defaultTitle} />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content={`https://www.finesser.co/${window.location.pathname}`} />
+            <meta property="og:url" content={`https://www.finesser.co${pathname}`} />
             <meta property="og:title" content={title || defaultTitle} />
             <meta property="og:description" content={description || defaultDescription} />
             <meta property="og:image" content={ogImage || defaultOGImage} />
