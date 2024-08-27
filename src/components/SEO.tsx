@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, ogImage, keywords }: SEOProps) {
-    const defaultTitle = "Empowering Nigeria's Creative Industries | Finesser LTD";
+    const defaultTitle = "Empowering Nigeria's Creative Industries | CI Finesser";
     const defaultDescription = "Revolutionizing Nigeria's creative and technological landscape through innovative solutions, talent development, and digital banking."
     const defaultOGImage = '/og-image.png' // Add a default OG image to your public folder
     const defaultKeywords = "Nigeria Creative Industries, Digital Economy Solutions, Talent Development Platform, Digital Banking Innovation, Creative Technology Solutions, African Talent Empowerment, Technological Innovation Nigeria, Creative Industry Revolution, Sustainable Growth Solutions"
