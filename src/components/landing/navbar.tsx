@@ -14,15 +14,15 @@ export const NavBar: FC = () => {
         setIsProductsDropdownOpen(!isProductsDropdownOpen);
     };
     return (
-        <nav className="flex items-center justify-between p-4 px-[200px] bg-white">
+        <nav className="flex items-center justify-between p-8 md:px-[200px] bg-transparent z-10 fixed top-0 left-0 w-full">
             <div className="flex items-center justify-center">
                 <Link href="/">
-                    <div className="flex items-center">
+                    <div className="flex items-center z-50">
                         <Image
                             src="/og-image.png"
                             alt="Logo"
-                            width={70}
-                            height={70}
+                            width={100}
+                            height={100}
                         />
                     </div>
                 </Link>
@@ -30,7 +30,7 @@ export const NavBar: FC = () => {
                     <div className="relative">
                         <button
                             onClick={toggleProductsDropdown}
-                            className="flex items-center text-black text-sm font-semibold"
+                            className="flex items-center text-black text-lg font-semibold"
                         >
                             Products
                             <svg
@@ -62,17 +62,17 @@ export const NavBar: FC = () => {
                         )}
                     </div>
                     <Link href="#about">
-                        <div className="text-black text-sm font-semibold">
+                        <div className="text-black text-lg font-semibold">
                             About us
                         </div>
                     </Link>
                     <Link href="#services">
-                        <div className="text-black text-sm font-semibold">
+                        <div className="text-black text-lg font-semibold">
                             Services
                         </div>
                     </Link>
                     <Link href="#contact">
-                        <div className="text-black text-sm font-semibold">
+                        <div className="text-black text-lg font-semibold">
                             Contact us
                         </div>
                     </Link>
