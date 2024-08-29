@@ -82,8 +82,11 @@ export const NavBar: FC = () => {
             <div className="hidden md:flex items-center gap-6">
                 <Link href="#join-us">
                     <div className="px-6 py-2.5 bg-[#e88800] rounded-md shadow justify-center items-center gap-1 flex">
-                        <div className="text-center text-white text-base font-semibold leading-normal">
+                        <div className="flex text-center text-white text-base font-semibold leading-normal">
                             Join us
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.2747 8L21.2747 12M21.2747 12L17.2747 16M21.2747 12L3.27466 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
                         </div>
                     </div>
                 </Link>

@@ -19,13 +19,15 @@ export default function Home() {
   return (
     <>
       <SEO />
-      <HeroSection />
-      <section className="w-full bg-gradient-to-br from-white to-white p-5">
-        <h1 className="text-center text-lg text-black sm:text-xl">
-          Partners growing with CI FInesser
-        </h1>
-      </section>
-      <AnimatedCarousel images={images} />
+      <main className="h-screen w-full">
+        <HeroSection />
+        <section className="w-full bg-gradient-to-br from-white to-white p-5">
+          <h1 className="text-center text-lg text-black sm:text-xl">
+            Partners growing with CI FInesser
+          </h1>
+        </section>
+        <AnimatedCarousel images={images} />
+      </main>
     </>
   );
 }
