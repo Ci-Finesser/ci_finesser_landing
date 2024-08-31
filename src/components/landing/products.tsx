@@ -35,7 +35,7 @@ const products: Product[] = [
 
 export const ProductsComponent: FC = () => {
     return (
-        <section className="py-16 px-8 md:px-28 bg-transparent">
+        <section id="products" className="py-16 px-8 md:px-28 bg-transparent">
             <div className="container mx-auto text-center max-w-[1240px]">
                 <h2 className="text-[#232e33] text-3xl md:text-4xl text-center font-bold mb-6 max-w-[1140px]">
                     Embracing creativity and continuously pushing the boundaries of
