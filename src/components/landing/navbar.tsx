@@ -1,10 +1,11 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export const NavBar: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -13,8 +14,26 @@ export const NavBar: FC = () => {
     const toggleProductsDropdown = () => {
         setIsProductsDropdownOpen(!isProductsDropdownOpen);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Adjust the scroll position (100px in this example) as needed
+            if (window.scrollY > 100) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
-        <nav className="flex items-center justify-between px-8 md:px-[150px] bg-transparent z-10 fixed top-0 left-0 w-full border-b border-gray-300">
+        <nav
+            className={`flex items-center justify-between px-8 md:px-[150px] z-10 fixed top-0 left-0 w-full transition-all duration-500 ${isScrolled
+                    ? "bg-white shadow-md border-b border-gray-300"
+                    : "bg-transparent shadow-md border-b border-gray-300"
+                }`}
+        >
             <div className="flex items-center justify-center">
                 <Link href="/">
                     <div className="flex items-center z-50">
@@ -125,35 +144,34 @@ export const NavBar: FC = () => {
                     )}
                 </svg>
             </button>
-
             {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="md:hidden absolute top-0 right-0 w-full h-screen bg-white z-10">
-                    <ul className="flex flex-col items-center justify-center h-full gap-8">
-                        <li onClick={toggleMenu}>
+                <div className="md:hidden absolute top-0 right-0 w-full h-screen bg-white backdrop-blur-sm bg-white/30 z-10">
+                    <ul className="flex flex-col items-center justify-center h-full gap-8 px-9">
+                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
                             <Link href="#products">
-                                <div className="text-black text-lg font-semibold">
+                                <div className="text-lg font-semibold">
                                     Products
                                 </div>
                             </Link>
                         </li>
-                        <li onClick={toggleMenu}>
+                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
                             <Link href="#about">
-                                <div className="text-black text-lg font-semibold">
+                                <div className="text-lg font-semibold">
                                     About us
                                 </div>
                             </Link>
                         </li>
-                        <li onClick={toggleMenu}>
+                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
                             <Link href="#services">
-                                <div className="text-black text-lg font-semibold">
+                                <div className="text-lg font-semibold">
                                     Services
                                 </div>
                             </Link>
                         </li>
-                        <li onClick={toggleMenu}>
+                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
                             <Link href="#contact">
-                                <div className="text-black text-lg font-semibold">
+                                <div className="text-lg font-semibold">
                                     Contact us
                                 </div>
                             </Link>

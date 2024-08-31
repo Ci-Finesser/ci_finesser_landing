@@ -17,7 +17,6 @@ export const HeroSection: FC = () => {
                     </p>
                     <Link href="#products">
                         <button className="px-6 py-3 bg-transparent text-[#e88800] border-2 border-[#e88800] font-semibold rounded-lg hover:bg-[#e88800] hover:text-white transition duration-300 ease-in-out">
-
                             <div className="flex gap-3">
                                 Explore our products
                                 <svg width="37" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +25,6 @@ export const HeroSection: FC = () => {
                             </div>
                         </button>
                     </Link>
-
                     <div className="mt-12 flex flex-wrap gap-x-4 gap-y-2">
                         {[
                             "Innovation",
@@ -38,7 +36,7 @@ export const HeroSection: FC = () => {
                             <div key={value} className="flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <circle cx="9" cy="9" r="9" fill="#E88800" />
-                                    <path d="M5 9L7.8 12L13 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M5 9L7.8 12L13 6" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                                 <span className="text-xs md:text-sm text-[#232e33] font-semibold">{value}</span>
                             </div>
