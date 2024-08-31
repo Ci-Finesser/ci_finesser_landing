@@ -27,11 +27,18 @@ export const NavBar: FC = () => {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const menuLinks = [
+        { label: "Products", href: "#products" },
+        { label: "About Us", href: "#about" },
+        { label: "Services", href: "#services" },
+        { label: "Contact Us", href: "#contact" },
+    ];
     return (
         <nav
             className={`flex items-center justify-between px-8 md:px-[150px] z-10 fixed top-0 left-0 w-full transition-all duration-500 ${isScrolled
-                    ? "bg-white shadow-md border-b border-gray-300"
-                    : "bg-transparent shadow-md border-b border-gray-300"
+                ? "bg-white shadow-md border-b border-gray-300"
+                : "bg-transparent shadow-md border-b border-gray-300"
                 }`}
         >
             <div className="flex items-center justify-center">
@@ -148,52 +155,15 @@ export const NavBar: FC = () => {
             {isMenuOpen && (
                 <div className="md:hidden absolute top-0 right-0 w-full h-screen bg-white backdrop-blur-sm bg-white/30 z-10">
                     <ul className="flex flex-col items-center justify-center h-full gap-8 px-9">
-                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
-                            <Link href="#products">
-                                <div className="text-lg font-semibold">
-                                    Products
-                                </div>
-                            </Link>
-                        </li>
-                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
-                            <Link href="#about">
-                                <div className="text-lg font-semibold">
-                                    About us
-                                </div>
-                            </Link>
-                        </li>
-                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
-                            <Link href="#services">
-                                <div className="text-lg font-semibold">
-                                    Services
-                                </div>
-                            </Link>
-                        </li>
-                        <li onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
-                            <Link href="#contact">
-                                <div className="text-lg font-semibold">
-                                    Contact us
-                                </div>
-                            </Link>
-                        </li>
-                        {/* <li>
-                            <Link href="#sign-in">
-                                <div className="px-6 py-2.5 opacity-0 bg-white rounded-md shadow justify-center items-center gap-1 flex">
-                                    <div className="text-center text-[#101518] text-base font-semibold leading-normal">
-                                        Sign in
+                        {menuLinks.map(menuLink => (
+                            <Link href={menuLink.href} onClick={toggleMenu} className="text-black hover:bg-[#e88800] hover:text-white w-full flex items-center justify-center p-3">
+                                <li>
+                                    <div className="text-lg font-semibold">
+                                        {menuLink.label}
                                     </div>
-                                </div>
+                                </li>
                             </Link>
-                        </li>
-                        <li>
-                            <Link href="#join-us">
-                                <div className="px-6 py-2.5 bg-[#e88800] rounded-md shadow justify-center items-center gap-1 flex">
-                                    <div className="text-center text-white text-base font-semibold leading-normal">
-                                        Join us
-                                    </div>
-                                </div>
-                            </Link>
-                        </li> */}
+                        ))}
                     </ul>
                 </div>
             )}
