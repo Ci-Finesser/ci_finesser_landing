@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AnimatedCarousel({ images }: { images: string[] }) {
   return (
-    <div className="bg-white py-2 shadow-md">
+    <div className="bg-white py-2 shadow-md z-50">
       <div className="flex select-none gap-12 overflow-hidden">
         {Array(2)
           .fill(null)
@@ -15,9 +15,9 @@ export default function AnimatedCarousel({ images }: { images: string[] }) {
               {images.map((image) => {
                 return (
                   <div className="mx-5 h-16 w-40" key={image}>
-                    <Image
-                      className="h-full w-full object-contain"
-                      src={image}
+                    <img
+                      className="h-full w-full object-contain text-black"
+                      src="assets/svgs/home-carousel/openzephilin.svg"
                       alt="companies"
                       width={1000}
                       height={500}
