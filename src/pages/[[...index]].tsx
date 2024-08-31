@@ -7,15 +7,16 @@ import AnimatedCarousel from "@/components/animatedCarousel";
 import { AboutUsComponent } from "@/components/landing/about";
 import { Footer } from "@/components/landing/footer";
 import { WaitList } from "@/components/landing/waitlist";
+import { TestimonialsComponent } from "@/components/landing/testimonials";
 
 const images = [
-  "/assets/svgs/home-carousel/openzephilin.svg",
-  "/assets/svgs/home-carousel/oracle.svg",
-  "/assets/svgs/home-carousel/protonet.svg",
-  "/assets/svgs/home-carousel/segment.svg",
-  "/assets/svgs/home-carousel/samsung.svg",
-  "/assets/svgs/home-carousel/morpheus.svg",
-  "/assets/svgs/home-carousel/monday.svg",
+  "assets/svgs/home-carousel/openzephilin.svg",
+  "assets/svgs/home-carousel/oracle.svg",
+  "assets/svgs/home-carousel/protonet.svg",
+  "assets/svgs/home-carousel/segment.svg",
+  "assets/svgs/home-carousel/samsung.svg",
+  "assets/svgs/home-carousel/morpheus.svg",
+  "assets/svgs/home-carousel/monday.svg",
 ];
 
 export default function Home() {
@@ -33,6 +34,7 @@ export default function Home() {
         </div>
         <AnimatedCarousel images={images} />
         <AboutUsComponent />
+        <TestimonialsComponent />
         <WaitList />
         <Footer />
       </main>

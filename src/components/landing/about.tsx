@@ -2,7 +2,7 @@ import { FC } from "react";
 
 export const AboutUsComponent: FC = () => {
     return (
-        <section id="#about" className="bg-[#fff4e6] py-16 md:py-24 lg:py-32">
+        <section id="about" className="bg-[#fff4e6] py-16 md:py-24 lg:py-32">
             <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 {/* Image (Placeholder) */}
                 <div className="md:w-1/2 lg:w-2/5">
@@ -11,11 +11,11 @@ export const AboutUsComponent: FC = () => {
 
                 {/* Text Content */}
                 <div className="md:w-1/2 lg:w-2/4  px-5 md:px-0">
-                    <h2 className="text-[35px] md:text-4xl lg:text-5xl font-bold text-[#232e33] leading-tight mb-4">
+                    <h2 className="text-[35px] md:text-4xl lg:text-5xl font-bold text-[#232e33] leading-tight mb-9">
                         <span className="text-[#e88800]">"Building a Skilled Africa"</span>{" "}
                         Top 1% of Talents
                     </h2>
-                    <p className="text-base md:text-lg text-[#232e33] font-normal leading-relaxed">
+                    <p className="text-base md:text-xl text-[#232e33] font-normal leading-relaxed">
                         We are a company duly registered in Nigeria with a deep-rooted
                         commitment to technological innovation. We are driven by our mission
                         to revolutionize the creative landscape in Nigeria. With a focus on
