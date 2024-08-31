@@ -8,7 +8,6 @@ interface Option {
 export const WaitList: FC = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [selectedPlatform, setSelectedPlatform] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const [selectedOptions, setSelectedOptions] = useState<Option[]>([
@@ -22,7 +21,6 @@ export const WaitList: FC = () => {
         // Handle form submission, e.g., send data to backend
         console.log("Name:", name);
         console.log("Email:", email);
-        console.log("Selected Platform:", selectedPlatform);
         console.log(
             "Selected Platforms:",
             selectedOptions
