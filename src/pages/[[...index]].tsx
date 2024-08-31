@@ -21,7 +21,7 @@ export default function Home() {
       <SEO />
       <main className="h-screen w-full">
         <HeroSection />
-        <section className="w-full bg-gradient-to-br from-white to-white p-5">
+        <section className="w-full bg-gradient-to-br from-white to-white p-5 border-t ">
           <h1 className="text-center text-lg text-black sm:text-xl">
             Partners growing with CI FInesser
           </h1>

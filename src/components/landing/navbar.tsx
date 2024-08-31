@@ -14,7 +14,7 @@ export const NavBar: FC = () => {
         setIsProductsDropdownOpen(!isProductsDropdownOpen);
     };
     return (
-        <nav className="flex items-center justify-between p-8 md:px-[200px] bg-transparent z-10 fixed top-0 left-0 w-full">
+        <nav className="flex items-center justify-between px-8 md:px-[150px] bg-transparent z-10 fixed top-0 left-0 w-full border-b border-gray-300">
             <div className="flex items-center justify-center">
                 <Link href="/">
                     <div className="flex items-center z-50">
@@ -46,15 +46,20 @@ export const NavBar: FC = () => {
 
                         {/* Dropdown Content */}
                         {isProductsDropdownOpen && (
-                            <div className="absolute top-full left-0 mt-2 py-2 bg-white rounded-md shadow-lg">
+                            <div className="absolute top-full w-[15rem] left-0 mt-2 py-2 bg-white rounded-md shadow-lg">
                                 <Link href="#product1">
                                     <div className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                                        Product 1
+                                        Talent Management
+                                    </div>
+                                </Link>
+                                <Link href="#product1">
+                                    <div className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                                        Talent Developement
                                     </div>
                                 </Link>
                                 <Link href="#product2">
                                     <div className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
-                                        Product 2
+                                        NeoBank {`(Coming Soon)`}
                                     </div>
                                 </Link>
                                 {/* Add more product links as needed */}
@@ -80,7 +85,7 @@ export const NavBar: FC = () => {
             </div>
 
             <div className="hidden md:flex items-center gap-6">
-                <Link href="#join-us">
+                {/* <Link href="#join-us">
                     <div className="px-6 py-2.5 bg-[#e88800] rounded-md shadow justify-center items-center gap-1 flex">
                         <div className="flex text-center text-white text-base font-semibold leading-normal">
                             Join us
@@ -89,7 +94,7 @@ export const NavBar: FC = () => {
                             </svg>
                         </div>
                     </div>
-                </Link>
+                </Link> */}
             </div>
             {/* Mobile Menu Button */}
             <button
@@ -125,35 +130,35 @@ export const NavBar: FC = () => {
             {isMenuOpen && (
                 <div className="md:hidden absolute top-0 right-0 w-full h-screen bg-white z-10">
                     <ul className="flex flex-col items-center justify-center h-full gap-8">
-                        <li>
+                        <li onClick={toggleMenu}>
                             <Link href="#products">
                                 <div className="text-black text-lg font-semibold">
                                     Products
                                 </div>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={toggleMenu}>
                             <Link href="#about">
                                 <div className="text-black text-lg font-semibold">
                                     About us
                                 </div>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={toggleMenu}>
                             <Link href="#services">
                                 <div className="text-black text-lg font-semibold">
                                     Services
                                 </div>
                             </Link>
                         </li>
-                        <li>
+                        <li onClick={toggleMenu}>
                             <Link href="#contact">
                                 <div className="text-black text-lg font-semibold">
                                     Contact us
                                 </div>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link href="#sign-in">
                                 <div className="px-6 py-2.5 opacity-0 bg-white rounded-md shadow justify-center items-center gap-1 flex">
                                     <div className="text-center text-[#101518] text-base font-semibold leading-normal">
@@ -170,7 +175,7 @@ export const NavBar: FC = () => {
                                     </div>
                                 </div>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             )}
