@@ -44,7 +44,7 @@ export const Solutions: FC = () => {
                     <h2 className="text-[#101518] text-3xl md:text-4xl font-bold mb-2">
                         Engage with our Creative Industry (CI) Solutions
                     </h2>
-                    <p className="text-[#9ba1a3] text-xs md:text-base font-normal">
+                    <p className="text-[#515b60] text-lg md:text-xl font-normal">
                         We are achieving our mission with an innovative online platform,
                         offering tailored financial tools and vibrant community features for
                         creatives and small businesses.

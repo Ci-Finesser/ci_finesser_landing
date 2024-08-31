@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'graphik': ['Graphik', 'sans-serif'],
-        'satoshi': ['Satoshi', 'sans-serif']
+        'graphik': ['Graphik'],
+        'satoshi': ['Satoshi']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
