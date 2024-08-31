@@ -56,7 +56,7 @@ export const NavBar: FC = () => {
                     <div className="relative">
                         <button
                             onClick={toggleProductsDropdown}
-                            className="flex items-center text-black text-lg font-semibold"
+                            className="flex items-center font-satoshi text-black text-lg font-semibold"
                         >
                             Products
                             <svg

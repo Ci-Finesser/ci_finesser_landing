@@ -5,9 +5,14 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './public/assets/fonts/**/*.{ttf,woff,woff2,otf}'
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'graphik': ['Graphik', 'sans-serif'],
+        'satoshi': ['Satoshi', 'sans-serif']
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
