@@ -80,13 +80,13 @@ export const TestimonialsComponent: FC = () => {
                 <h3 className="text-[#232e33] text-3xl md:text-4xl font-bold mb-8">
                     What our community is saying
                 </h3>
-                <div className="flex overflow-x-auto snap-x gap-8 mt-8 mr-8 scrollbar-hide"
+                <div className="flex overflow-x-auto snap-x gap-8 mt-8 mr-9 scrollbar-hide"
                     ref={testimonialsRef}
                 >
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className={`snap-center shrink-0 bg-white rounded-lg p-9 flex flex-col w-80 md:w-96 scrollbar-hide ${index === currentTestimonial ? "opacity-100" : "opacity-50"
+                            className={`snap-center shrink-0 bg-white rounded-lg p-9 flex flex-col w-80 md:w-96 scrollbar-hide ${index === currentTestimonial ? "opacity-100" : "opacity-80"
                                 }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 18 16" fill="none" className="mb-6">

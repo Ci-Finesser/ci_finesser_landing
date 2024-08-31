@@ -8,6 +8,7 @@ import { AboutUsComponent } from "@/components/landing/about";
 import { Footer } from "@/components/landing/footer";
 import { WaitList } from "@/components/landing/waitlist";
 import { TestimonialsComponent } from "@/components/landing/testimonials";
+import { ProductsComponent } from "@/components/landing/products";
 
 const images = [
   "assets/svgs/home-carousel/openzephilin.svg",
@@ -34,6 +35,9 @@ export default function Home() {
         </div>
         <AnimatedCarousel images={images} />
         <AboutUsComponent />
+        <div className="bg-no-repeat bg-cover bg-white" style={{ backgroundImage: "url('assets/svgs/section.svg')" }}>
+          <ProductsComponent />
+        </div>
         <TestimonialsComponent />
         <WaitList />
         <Footer />

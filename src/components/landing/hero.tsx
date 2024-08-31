@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const HeroSection: FC = () => {
     return (
-        <div className="bg-no-repeat bg-cover bg-white bg-left " style={{ backgroundImage: "url('/assets/svgs/hero.svg')" }} >
+        <div className="bg-no-repeat bg-cover bg-white bg-left" style={{ backgroundImage: "url('/assets/svgs/hero.svg')" }} >
             <NavBar />
             <section className="flex justify-center items-center h-screen">
                 <div className="md:w-1/2 lg:w-2/5 mb-8 md:mb-0 px-9 -mt-[9rem]">
