@@ -8,7 +8,7 @@ export const HeroSection: FC = () => {
         <div className="bg-no-repeat bg-cover bg-white bg-left" style={{ backgroundImage: "url('/assets/svgs/hero.svg')" }} >
             <NavBar />
             <motion.section
-                className="flex justify-center items-center pt-80"
+                className="flex justify-center items-center pt-80 md:pt-[15rem]"
                 initial={{ opacity: 0, y: 50 }} // Initial state: hidden and slightly below
                 animate={{ opacity: 1, y: 0 }} // Animate to: visible and in its normal position
                 transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
@@ -118,13 +118,18 @@ export const HeroSection: FC = () => {
                 </div>
 
                 {/* Image */}
-                <div className="md:w-1/2 lg:w-2/5 md:ml-9 hidden md:flex">
+                <motion.div
+                    className="md:w-1/2 lg:w-2/5 md:ml-9 hidden md:flex"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                >
                     <img
                         src="assets/images/hero/hero-img.png"
                         alt="Hero Image"
                         className="w-full h-auto"
                     />
-                </div>
+                </motion.div>
             </motion.section>
         </div>
     )

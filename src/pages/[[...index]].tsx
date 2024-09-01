@@ -37,7 +37,7 @@ export default function Home() {
         </div> */}
         {/* <AnimatedCarousel images={images} />  */}
         <AboutUsComponent />
-        <div className="bg-no-repeat md:bg-cover bg-center md:bg bg-white" style={{ backgroundImage: "url('assets/svgs/section.svg')" }}>
+        <div className="bg-no-repeat bg-cover bg-center md:bg bg-white" style={{ backgroundImage: "url('assets/svgs/section.svg')" }}>
           <Solutions />
           <div className="lg:px-96 px-8 -mt-[10rem]">
             <CallToAction />

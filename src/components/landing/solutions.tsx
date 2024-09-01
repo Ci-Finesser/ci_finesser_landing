@@ -13,7 +13,7 @@ const solutions: Solution[] = [
     {
         imageUrl: "assets/images/solutions.png",
         title: "Skills Development",
-        description:
+        description: 
             "A platform for creatives to engage with interactive courses, connect with industry experts, and earn certifications to advance in career.",
         linkText: "Visit platform",
         linkUrl: "#", // Replace with actual URL
@@ -60,7 +60,7 @@ export const Solutions: FC = () => {
                             <img
                                 src={solution.imageUrl}
                                 alt={solution.title}
-                                className="absolute top-[6rem] right-0 w-24 h-auto translate-x-1/2 -translate-y-1/2"
+                                className="absolute top-[6rem] right-0 w-24 h-auto translate-x-1/2 -translate-y-1/2 md:flex hidden"
                             />
                             <h3 className="text-2xl font-bold mb-4">
                                 <span className="text-[#e88800]">{solution.title.split(" ")[0]}</span>{" "}
@@ -78,7 +78,7 @@ export const Solutions: FC = () => {
                                             {solution.linkText}
                                         </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <path d="M11.3333 5.33203L14 7.9987M14 7.9987L11.3333 10.6654M14 7.9987L2 7.9987" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M11.3333 5.33203L14 7.9987M14 7.9987L11.3333 10.6654M14 7.9987L2 7.9987" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </Link>
