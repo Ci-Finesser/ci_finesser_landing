@@ -78,7 +78,7 @@ export const Solutions: FC = () => {
                                             {solution.linkText}
                                         </span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                            <path d="M11.3333 5.33203L14 7.9987M14 7.9987L11.3333 10.6654M14 7.9987L2 7.9987" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M11.3333 5.33203L14 7.9987M14 7.9987L11.3333 10.6654M14 7.9987L2 7.9987" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </button>
                                 </Link>

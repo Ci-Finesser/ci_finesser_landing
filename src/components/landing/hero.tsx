@@ -76,7 +76,7 @@ export const HeroSection: FC = () => {
                         className="mt-12 flex flex-wrap gap-x-4 gap-y-2"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 1 }}
+                        transition={{ duration: 0.8, delay: 1, staggerChildren: 0.1 }} // Add staggerChildren
                     >
                         {[
                             "Innovation",
@@ -88,7 +88,10 @@ export const HeroSection: FC = () => {
                             <motion.div
                                 key={value}
                                 className="flex items-center gap-2"
-                                whileHover={{ scale: 1.1 }} // Add a hover effect
+                                whileHover={{ scale: 1.1 }}
+                                initial={{ opacity: 0, y: 20 }} // Initial state for each child
+                                animate={{ opacity: 1, y: 0 }} // Animation for each child
+                                transition={{ duration: 0.5 }} // Transition for each child
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

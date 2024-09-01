@@ -18,7 +18,7 @@ export const CallToAction: FC = () => {
                         <button className="flex items-center justify-between gap-3 px-6 py-3 bg-[#e88800] text-white font-semibold rounded-lg hover:bg-transparent hover:border-2 border-[#e88800] transition duration-300 ease-in-out">
                             Join the waitlist
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                <path d="M14.1667 6.66797L17.5 10.0013M17.5 10.0013L14.1667 13.3346M17.5 10.0013L2.5 10.0013" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M14.1667 6.66797L17.5 10.0013M17.5 10.0013L14.1667 13.3346M17.5 10.0013L2.5 10.0013" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                     </Link>

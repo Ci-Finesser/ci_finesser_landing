@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,6 +6,9 @@ export const NavBar: FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const navbarRef = useRef<HTMLDivElement>(null);
+
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -17,15 +20,16 @@ export const NavBar: FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Adjust the scroll position (100px in this example) as needed
-            if (window.scrollY > 100) {
+
+            if (window.scrollY > 30) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
             }
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const menuLinks = [
@@ -36,6 +40,7 @@ export const NavBar: FC = () => {
     ];
     return (
         <nav
+            ref={navbarRef}
             className={`flex items-center justify-between px-8 md:px-[150px] z-10 fixed top-0 left-0 w-full transition-all duration-500 ${isScrolled
                 ? "bg-white shadow-md border-b border-gray-300"
                 : "bg-transparent shadow-md border-b border-gray-300"
@@ -116,7 +121,7 @@ export const NavBar: FC = () => {
                         <div className="flex text-center text-white text-base font-semibold leading-normal">
                             Join us
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.2747 8L21.2747 12M21.2747 12L17.2747 16M21.2747 12L3.27466 12" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.2747 8L21.2747 12M21.2747 12L17.2747 16M21.2747 12L3.27466 12" stroke="white" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </div>
                     </div>

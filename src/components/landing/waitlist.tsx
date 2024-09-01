@@ -1,17 +1,70 @@
 import { FC, useEffect, useRef, useState } from "react"
+import { toast } from "react-toastify";
 
 interface Option {
     value: string;
     label: string;
     checked: boolean;
 }
+
+interface ToastProps {
+    message: string;
+    type: "success" | "error" | "warning" | "info";
+    duration?: number;
+    closeToast?: () => void;
+}
+
+const CustomToast = ({ closeToast, type, message }: ToastProps) => (
+    <div className="px-6 py-10 bg-white justify-between gap-6 items-start inline-flex">
+        {type === 'success' ? (<img className="w-36 h-36" src="assets/images/success.png" />) : type === 'error' ? (<img className="w-36 h-36" src="https://via.placeholder.com/150x150" />) : null}
+        <div className="grow shrink basis-0 flex-col justify-start items-start gap-4 inline-flex">
+            <div className="self-stretch">
+                {type === 'success' ?
+                    <>
+                        <span className="text-[#459f49] text-xl font-bold leading-7">Success! </span><span className="text-[#232e33] text-xl font-bold font-['Satoshi'] leading-7">You’ve Joined the Waitlist</span>
+                    </>
+                    : type === 'error' ?
+                        <>
+                            <span className="text-[#ffbc00] text-xl font-bold font-['Satoshi'] leading-7">Error! </span><span className="text-[#232e33] text-xl font-bold font-['Satoshi'] leading-7">Invalid datails</span>
+                        </> : null
+                }
+            </div>
+            <div className="self-stretch text-[#515b60] text-base font-normal leading-relaxed">
+               {message}
+            </div>
+            <div className="justify-start items-start gap-4 inline-flex">
+                <div className="flex-col justify-start items-start gap-1 inline-flex">
+                    <button
+                        className="px-3 py-2.5 bg-[#ffbc00] rounded-lg justify-start items-center gap-1 inline-flex"
+                        onClick={closeToast} // Close the toast when "Okay" is clicked
+                    >
+                        <span className="text-white text-xs font-normal leading-tight">
+                            Okay
+                        </span>
+                    </button>
+                </div>
+                <div className="flex-col justify-start items-start gap-1 inline-flex">
+                    <button
+                        className="px-3 py-2.5 bg-[#fff8e5] rounded-lg border border-[#ffbc00] justify-start items-center gap-1 inline-flex"
+                        onClick={closeToast} // Close the toast when "Cancel" is clicked
+                    >
+                        <span className="text-[#ffbc00] text-xs font-normal leading-tight">
+                            Cancel
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
 export const WaitList: FC = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const [selectedOptions, setSelectedOptions] = useState<Option[]>([
-        { value: "creative_managment", label: "Creative Management", checked: false },
+        { value: "creative_management", label: "Creative Management", checked: false },
         { value: "skills_development", label: "Skills Development", checked: false },
         { value: "financial_management", label: "Financial Management", checked: false },
     ]);
@@ -27,6 +80,45 @@ export const WaitList: FC = () => {
                 .filter((option) => option.checked)
                 .map((option) => option.value)
         );
+        fetch("/api/joinWaitlist", {
+            method: "POST", body: JSON.stringify({
+                first_name: name,
+                email: email,
+                products: selectedOptions
+                    .filter((option) => option.checked)
+                    .map((option) => option.value)
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(`Response data: ${JSON.stringify(data)}`)
+                if (data.status) {
+                    toast(<CustomToast message="Thank you for your interest in our platforms. You’ll be among the first to know when access becomes available. Keep an eye on your email for updates and next steps." type="success" />, {
+                        position: "top-center",
+                        autoClose: false, // Keep the toast open until manually closed
+                        hideProgressBar: true,
+                        closeOnClick: false, // Prevent closing on click outside the toast
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        style: { width: "90%", height: "260px" }
+                    });
+                } else {
+                    toast(<CustomToast message={data.message} type="error" />, {
+                        position: "top-left",
+                        autoClose: false, // Keep the toast open until manually closed
+                        hideProgressBar: true,
+                        closeOnClick: false, // Prevent closing on click outside the toast
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        style: { width: "90%", height: "260px" }
+                    });
+                }
+            });
+
     };
 
     const handleOptionChange = (value: string) => {
@@ -89,7 +181,7 @@ export const WaitList: FC = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                         />
-                        <div className="relative" ref={dropdownRef}>
+                        <div className="relative" ref={dropdownRef} aria-required>
                             <div
                                 className="flex bg-transparent px-1 py-3 text-[#e88800] placeholder-[#e88800] focus:outline-none focus:border-[#e88800] appearance-none cursor-pointer"
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -134,7 +226,7 @@ export const WaitList: FC = () => {
                                                         checked={option.checked}
                                                         onChange={() => { }} // Prevent default checkbox behavior
                                                     />
-                                                    <span  onClick={() => handleOptionChange(option.value)} className="text-[#232e33] text-xs md:text-lg font-normal">
+                                                    <span onClick={() => handleOptionChange(option.value)} className="text-[#232e33] text-xs md:text-lg font-normal">
                                                         {option.label}
                                                     </span>
                                                 </label>

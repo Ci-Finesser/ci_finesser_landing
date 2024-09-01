@@ -28,14 +28,14 @@ export default function Home() {
       <SEO />
       <main className="h-screen w-full bg-white">
         <HeroSection />
-        <div className="px-9 bg-white">
+        {/* <div className="px-9 bg-white">
           <section className="w-full bg-gradient-to-br from-white to-white p-5 border-t">
             <h1 className="text-center text-lg text-black sm:text-xl">
               Partners growing with CI FInesser
             </h1>
           </section>
         </div>
-        <AnimatedCarousel images={images} />
+        <AnimatedCarousel images={images} /> */}
         <AboutUsComponent />
         <div className="bg-no-repeat md:bg-cover bg-center md:bg bg-white" style={{ backgroundImage: "url('assets/svgs/section.svg')" }}>
           <Solutions />
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
           <ProductsComponent />
         </div>
-        <TestimonialsComponent />
+        {/* <TestimonialsComponent /> */}
         <WaitList />
         <Footer />
       </main>
