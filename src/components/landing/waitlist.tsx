@@ -30,7 +30,7 @@ const CustomToast = ({ closeToast, type, message }: ToastProps) => (
                 }
             </div>
             <div className="self-stretch text-[#515b60] text-base font-normal leading-relaxed">
-               {message}
+                {message}
             </div>
             <div className="justify-start items-start gap-4 inline-flex">
                 <div className="flex-col justify-start items-start gap-1 inline-flex">
@@ -250,9 +250,27 @@ export const WaitList: FC = () => {
                         <button
                             disabled={isLoading}
                             type="submit"
-                            className="bg-[#e88800] text-white font-normal py-3 rounded-lg hover:bg-yellow-600 transition duration-300 ease-in-out"
+                            className="bg-[#e88800] w-[10rem] text-white font-normal py-3 rounded-lg hover:bg-transparent hover:text-[#e88800] hover:border-2 border-[#e88800] transition duration-300 ease-in-out"
                         >
-                            Submit
+                            <div className="flex gap-2 items-center justify-center">
+                                Submit
+                                <svg
+                                    width="37"
+                                    height="24"
+                                    viewBox="0 0 27 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="animate-bounce"
+                                >
+                                    <path
+                                        d="M17.2747 8L21.2747 12M21.2747 12L17.2747 16M21.2747 12L3.27466 12"
+                                        stroke="currentColor"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={3}
+                                    />
+                                </svg>
+                            </div>
                         </button>
                     </form>
                 </div>
