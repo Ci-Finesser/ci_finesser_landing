@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        'sd': { 'min': '760px', 'max': '1182px' },
+        'sd': { 'min': '760px', 'max': '1282px' },
       },
       fontFamily: {
         'graphik': ['Graphik'],
