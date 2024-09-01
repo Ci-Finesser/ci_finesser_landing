@@ -146,7 +146,7 @@ export const WaitList: FC = () => {
 
 
     return (
-        <section className="bg-[#101518] py-16 px-9 md:px-28">
+        <section id="waitlist" className="bg-[#101518] py-16 px-9 md:px-28">
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                 {/* Text Content */}
                 <div className="md:w-1/2 lg:w-1/3 mb-8 md:mb-0 w-full">
