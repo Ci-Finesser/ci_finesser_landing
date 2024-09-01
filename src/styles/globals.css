@@ -40,3 +40,8 @@ body {
     text-wrap: balance;
   }
 }
+
+
+@media (min-width: 760px) and (max-width: 1182px) {
+  /* Your CSS styles for screens between 760px and 1182px */
+}

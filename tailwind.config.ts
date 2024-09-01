@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'sd': { 'min': '760px', 'max': '1182px' },
+      },
       fontFamily: {
         'graphik': ['Graphik'],
         'satoshi': ['Satoshi']
