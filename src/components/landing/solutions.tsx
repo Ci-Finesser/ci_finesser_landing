@@ -51,7 +51,7 @@ export const Solutions: FC = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center md:gap-[1.75rem]">
+                <div className="grid grid-cols-1 sd:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center items-center justify-center md:gap-[1.75rem]">
                     {solutions.map((solution, index) => (
                         <div
                             key={index}
