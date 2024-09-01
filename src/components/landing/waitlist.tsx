@@ -62,6 +62,7 @@ export const WaitList: FC = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isLoading, setIsisLoading] = useState(false);
 
     const [selectedOptions, setSelectedOptions] = useState<Option[]>([
         { value: "creative_management", label: "Creative Management", checked: false },
@@ -71,6 +72,7 @@ export const WaitList: FC = () => {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+        setIsisLoading(true);
         // Handle form submission, e.g., send data to backend
         console.log("Name:", name);
         console.log("Email:", email);
@@ -91,6 +93,7 @@ export const WaitList: FC = () => {
         })
             .then(response => response.json())
             .then(data => {
+                setIsisLoading(false);
                 console.log(`Response data: ${JSON.stringify(data)}`)
                 if (data.status) {
                     toast(<CustomToast message="Thank you for your interest in our platforms. You’ll be among the first to know when access becomes available. Keep an eye on your email for updates and next steps." type="success" />, {
@@ -245,6 +248,7 @@ export const WaitList: FC = () => {
                         </div>
 
                         <button
+                            disabled={isLoading}
                             type="submit"
                             className="bg-[#e88800] text-white font-normal py-3 rounded-lg hover:bg-yellow-600 transition duration-300 ease-in-out"
                         >
