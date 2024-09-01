@@ -2,7 +2,7 @@ import { FC } from "react";
 
 export const AboutUsComponent: FC = () => {
     return (
-        <section id="about" className="bg-[#fff4e6] py-16 md:py-24 lg:py-32">
+        <section id="about" className="bg-[#fff4e6] py-16 md:py-24 lg:py-32 w-full">
             <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 {/* Image (Placeholder) */}
                 <div className="md:w-1/2 lg:w-2/5">

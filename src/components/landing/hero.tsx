@@ -8,7 +8,7 @@ export const HeroSection: FC = () => {
         <div className="bg-no-repeat bg-cover bg-white bg-left" style={{ backgroundImage: "url('/assets/svgs/hero.svg')" }} >
             <NavBar />
             <motion.section
-                className="flex justify-center items-center h-screen"
+                className="flex justify-center items-center pt-80"
                 initial={{ opacity: 0, y: 50 }} // Initial state: hidden and slightly below
                 animate={{ opacity: 1, y: 0 }} // Animate to: visible and in its normal position
                 transition={{ duration: 1, ease: "easeOut" }} // Animation duration and easing
