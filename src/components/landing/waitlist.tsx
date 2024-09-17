@@ -105,7 +105,7 @@ export const WaitList: FC = () => {
                         draggable: true,
                         progress: undefined,
                         theme: "light",
-                        style: { width: "90%", height: "260px" }
+                        style: { maxWidth: "90rem", height: "260px" }
                     });
                 } else {
                     toast(<CustomToast message={data.message} type="error" />, {
@@ -117,7 +117,7 @@ export const WaitList: FC = () => {
                         draggable: true,
                         progress: undefined,
                         theme: "light",
-                        style: { width: "90%", height: "260px" }
+                        style: { maxWidth: "90rem", height: "260px" }
                     });
                 }
             });
@@ -160,7 +160,7 @@ export const WaitList: FC = () => {
                         Get Started with{" "}
                         <span className="text-[#e88800]">CI Finesser</span> Today
                     </h3>
-                    <p className="text-[#e9ebeb] text-base md:text-lg font-normal leading-relaxed">
+                    <p className="text-[#e9ebeb] max-w-[29rem] text-base md:text-lg font-normal leading-relaxed">
                         Explore our products and find the perfect solution for your needs.
                     </p>
                 </div>

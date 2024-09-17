@@ -10,8 +10,8 @@ export const AboutUsComponent: FC = () => {
                 </div>
 
                 {/* Text Content */}
-                <div className="md:w-1/2 lg:w-2/4  px-5 md:px-0">
-                    <h2 className="text-[35px] md:text-4xl lg:text-5xl font-bold text-[#232e33] leading-tight mb-9">
+                <div className="md:w-1/2 lg:w-1/2 px-5 md:px-0">
+                    <h2 className="text-[30px] md:text-4xl lg:text-5xl font-bold text-[#232e33] leading-tight mb-9">
                         <span className="text-[#e88800]">Empowering Creativity with Purpose</span>
                     </h2>
                     <p className="text-base md:text-xl text-[#232e33] font-normal leading-relaxed">
