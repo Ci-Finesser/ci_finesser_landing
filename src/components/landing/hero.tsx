@@ -19,12 +19,12 @@ export const HeroSection: FC = () => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        <div className="text-[#232e33] text-base font-normal leading-relaxed">
+                        <div className="text-[#232e33] text-[18px] font-graphik leading-relaxed">
                             Empowering the Future of Nigeria's Creative Industries
                         </div>
                     </motion.div>
                     <motion.h1
-                        className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#232e33] leading-tight mb-9"
+                        className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-satoshi-bold text-[#232e33] leading-tight mb-9"
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
@@ -33,7 +33,7 @@ export const HeroSection: FC = () => {
                         Thriving Digital Economy
                     </motion.h1>
                     <motion.p
-                        className="text-base md:text-lg text-[#232e33] font-semibold leading-relaxed mb-6"
+                        className="text-[18px] md:text-lg text-[#232e33] font-graphik leading-relaxed mb-6"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
@@ -109,7 +109,7 @@ export const HeroSection: FC = () => {
                                         strokeLinejoin="round"
                                     />
                                 </svg>
-                                <span className="text-xs md:text-sm text-[#232e33] font-semibold">
+                                <span className="text-sm md:text-sm text-[#232e33] font-semibold">
                                     {value}
                                 </span>
                             </motion.div>

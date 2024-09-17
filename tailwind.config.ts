@@ -14,7 +14,8 @@ const config: Config = {
       },
       fontFamily: {
         'graphik': ['Graphik'],
-        'satoshi': ['Satoshi']
+        'satoshi': ['Satoshi'],
+        'satoshi-bold': ['SatoshiBold']
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

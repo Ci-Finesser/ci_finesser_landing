@@ -18,18 +18,22 @@
 
 @font-face {
   font-family: 'Graphik';
-  src: url('/assets/fonts/graphik/GraphikRegular.otf') format('otf');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/assets/fonts/graphik/graphik.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('/assets/fonts/satoshi/Satoshi-Regular.otf') format('otf');
-  font-weight: normal;
-  font-style: normal;
+  src: url('/assets/fonts/satoshi/satoshi.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'SatoshiBold';
+  src: url('/assets/fonts/satoshi/satoshi-bold.woff') format('woff');
+}
+
+body {
+  font-family: 'Satoshi', Arial, sans-serif;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: "white"
