@@ -116,7 +116,6 @@ export const HeroSection: FC = () => {
                         ))}
                     </motion.div>
                 </div>
-
                 {/* Image */}
                 <motion.div
                     className="md:w-1/2 lg:w-2/5 md:ml-9 hidden md:flex"

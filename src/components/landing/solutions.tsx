@@ -38,11 +38,11 @@ const solutions: Solution[] = [
 
 export const Solutions: FC = () => {
     return (
-        <section className="py-[12rem] px-8 md:px-28 bg-white pb-[20rem]">
+        <section className="py-[9rem] px-8 md:px-28 bg-white pb-[20rem]">
             <div className="container mx-auto">
-                <div className="mb-10 md:mb-16 text-center">
+                <div className="mb-10 md:mb-16 text-left">
                     <h2 className="text-[#101518] text-3xl md:text-4xl font-bold mb-2">
-                        Engage with our Creative Industry (CI) Solutions
+                        {`Engage with our Creative Industry (CI) Solutions`}
                     </h2>
                     <p className="text-[#515b60] text-lg md:text-xl font-normal">
                         We are achieving our mission with an innovative online platform,
